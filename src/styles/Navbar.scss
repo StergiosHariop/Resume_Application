@@ -1,0 +1,22 @@
+@import './mixins/mixins.scss';
+
+.navbar {
+    @include flexbox(center, space-between, column);
+    width: 100%;
+    background-color: gray;
+}
+
+.link-container {
+    @include flexbox(center, space-between, row);
+    width: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+}
