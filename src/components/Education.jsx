@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
@@ -56,7 +56,6 @@ export default function Education() {
                     />
                 </div>
               </div>
-    
         </div>
   )
 }

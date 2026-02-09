@@ -3,8 +3,8 @@ import './App.scss';
 import Personal from './components/Personal.jsx';
 import Experience from './components/Experience.jsx';
 import Education from './components/Education.jsx';
-import Additional_Info from './components/Additional_Info.jsx';
 import Languages from './components/Languages.jsx';
+import Resume from './components/Resume.jsx';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Personal />
       <Experience />
       <Education />
-      <Additional_Info />
       <Languages />
+      <Resume />
     </div>
   )
 }

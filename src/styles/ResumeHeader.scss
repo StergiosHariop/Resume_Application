@@ -1,0 +1,17 @@
+.resume-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0e374e;
+    color: white;
+    padding: 15px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+}

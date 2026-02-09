@@ -3,7 +3,7 @@
 .navbar {
     @include flexbox(center, space-between, column);
     width: 100%;
-    background-color: gray;
+    background-color: #0e374e;
 }
 
 .link-container {
