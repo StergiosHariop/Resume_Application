@@ -1,9 +1,10 @@
-@import './mixins/mixins.scss';
+@use './variables/variables' as *;
+@use './mixins/mixins.scss' as *;
 
 .navbar {
     @include flexbox(center, space-between, column);
     width: 100%;
-    background-color: #0e374e;
+    background-color: $Light-Grayish-Blue;
 }
 
 .link-container {

@@ -6,6 +6,7 @@ export default function ResumeHeader() {
     <>
       <div className='resume-header'>
         <h2>John Doe</h2>
+        <h4>Software Engineer</h4>
         <div className='info-container'>
           <p>New York,NY,10017</p>
           <p>+1 (217) 556 4367</p>

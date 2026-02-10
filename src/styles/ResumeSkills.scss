@@ -1,0 +1,10 @@
+@use '../styles/mixins/mixins' as *;
+@use './variables/variables' as *;
+
+.skills {
+    font-size: $size-10;
+
+    .technical, .tools {
+        margin: 0;
+    }
+}

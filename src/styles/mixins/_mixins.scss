@@ -4,3 +4,8 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+@mixin fontProps($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}

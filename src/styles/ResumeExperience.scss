@@ -1,29 +1,24 @@
+@use '../styles/mixins/mixins' as *;
 @use './variables/variables' as *;
 
-.resume-header {
+.experience-container {
+    font-size: $size-10;
+}
+
+.experience-title {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.job-info {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $Light-Grayish-Blue;
-    color: white;
-    padding: 15px;
-    gap:5px;
+    justify-content: space-between;
 }
 
-h2 {
-    margin: 0;
-    font-size: $size-20;
-}
-
-h4 {
-    margin: 0;
-    font-size: $size-13;
-}
-
-.info-container {
+.company {
     display: flex;
     flex-direction: row;
-    font-size: $size-10;
+    align-items: center;
     gap: 5px;
 
     p {
@@ -43,6 +38,15 @@ h4 {
         transform: translate(-50%);
         width: 1px;
         height: 14px;
-        background: white; 
+        background: black; 
     }
+}
+
+.dates p{
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    font-style: italic;
 }
