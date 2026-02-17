@@ -1,23 +1,24 @@
 @use '../styles/mixins/mixins' as *;
 @use './variables/variables' as *;
 
-.experience-container {
+.education-container {
     //@include xs {}
     font-size: $size-7;
 }
 
-.experience-title {
-    margin: 2px 0; //xs
-    font-weight: bold;
-}
-
-.job-info {
+.education-info {
     display: flex;
     justify-content: space-between;
 }
 
-.company {
-    @include flexbox(center, center, row);
+.major, .gpa {
+    margin: 2px 0; //xs 
+}
+
+.institute {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 5px;
 
     p {
@@ -45,8 +46,3 @@
     margin: 0;
 }
 
-ul {
-    margin: 0;
-    padding-left: 13px;
-    font-style: italic;
-}

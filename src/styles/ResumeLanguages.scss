@@ -1,10 +1,7 @@
 @use '../styles/mixins/mixins' as *;
 @use './variables/variables' as *;
 
-.skills {
+.lang-container {
+    //@include xs {}
     font-size: $size-7;
-
-    .technical, .tools {
-        margin: 0;
-    }
 }

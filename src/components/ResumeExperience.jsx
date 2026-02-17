@@ -10,24 +10,45 @@ const company = {
 
 export default function ResumeExperience() {
   return (
-    <div className='experience-container'>
-      <div className='job-info'>
-        <div className='company'>
-          <p><b>{company.name}</b></p>
-          <p>{company.location}</p>
+    <>
+      <div className='experience-container'>
+        <div className='job-info'>
+          <div className='company'>
+            <p><b>{company.name}</b></p>
+            <p>{company.location}</p>
+          </div>
+          <div className='dates'>
+            <p>{company.startDate} - {company.endDate}</p>
+          </div>
         </div>
-        <div className='dates'>
-          <p>{company.startDate} - {company.endDate}</p>
-        </div>
+        <p className='experience-title'>{company.title}</p>
+        <ul>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic.</li>
+        </ul>
       </div>
-      <p className='experience-title'>Software Engineer</p>
-      <ul>
-        <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</li>
-        <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing.</li>
-        <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.</li>
-        <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.</li>
-        <li>Lorem ipsum is placeholder text commonly used in the graphic.</li>
-      </ul>
-    </div>
+      <div className='experience-container'>
+        <div className='job-info'>
+          <div className='company'>
+            <p><b>{company.name}</b></p>
+            <p>{company.location}</p>
+          </div>
+          <div className='dates'>
+            <p>{company.startDate} - {company.endDate}</p>
+          </div>
+        </div>
+        <p className='experience-title'>{company.title}</p>
+        <ul>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.</li>
+          <li>Lorem ipsum is placeholder text commonly used in the graphic.</li>
+        </ul>
+      </div>
+    </>
   )
 }

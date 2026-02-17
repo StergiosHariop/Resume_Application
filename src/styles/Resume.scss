@@ -2,25 +2,36 @@
 @use './variables/variables' as *;
 
 .resume-container {
-    display: flex;
-    flex-direction: column;
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .1), 0 8px 16px -8px rgba(0, 0, 0, .25);
     // height: 29.7cm; desktop
     // width: 21cm; desktop
-    gap: 10px;
-    height: 24.7cm;
-    width: 14cm;
+    // height: 24.7cm; sm
+    // width: 14cm; sm
+    // height: 17cm; //xs
+    // width: 8cm; //xs
+
+    width: 100%;
+    max-width: 21cm;
+
+    height: auto;
+    aspect-ratio: 1 / 1.414;
 }
 
-.resume-experience, .resume-skills {
-    padding: 0px 15px;
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; //xs
+    padding:10px;
+}
 
+.section {
     h2 {
-        font-size: $size-16;
+        font-size: $size-10; //xs
+        margin: 0;
     }
 }
 
 hr {
-    margin-top: 0;
+    margin: 3px 0;
 }
 

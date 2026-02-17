@@ -1,9 +1,20 @@
+import { useState } from "react";
 
-function Languages() {
-  const languages = [
+function Languages({ onLanguageChange }) {
+  const [displayAddButton, setDisplayAddButton] = useState(true);
+  const [displayLangSelection, setDisplayLangSelection] = useState(false);
+
+  const addLanguage = () => {
+    setDisplayAddButton(false);
+    setDisplayLangSelection(true);
+  };
+
+  const languageSelection = () => {
+
+    const languageList = [
     'English',
     'Chinese',
-    'Hindi',
+    'Hindu',
     'Spanish',
     'Greek',
     'French',
@@ -15,16 +26,34 @@ function Languages() {
     'Japanese'
   ];
 
-
-  return (
-    <div className='experience-container'>
-        <h2>Languages</h2>
-        <select id="lang" name="languages">
-          {languages.map((lang, index) => (
-            <option key={index} value={lang}>{lang}</option>
+    return (
+        <select
+          id="lang"
+          name="languages"
+          onChange={(e) => onLanguageChange(e.target.value)}
+          >
+          {languageList.map((lang, index) => (
+            <option
+              key={index}
+              value={lang}
+            >
+            {lang}
+            </option>
           ))}
         </select>
+    )
+  };
+
+
+  return (
+    <>
+    <div className='button-container'>
+      {displayAddButton && (<button 
+        onClick={addLanguage}
+      >Add Language</button>)}
     </div>
+      {displayLangSelection && languageSelection()}
+    </>
   )
 }
 

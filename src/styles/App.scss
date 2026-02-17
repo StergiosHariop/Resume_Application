@@ -1,0 +1,59 @@
+@use '../styles/mixins/mixins' as *;
+@use './variables/variables' as *;
+
+body {
+    margin: 0;
+}
+
+.header-container {
+    @include flexbox(center, center, column);
+    width: 100%;
+    background-color: $Light-Grayish-Blue;
+    color: white;
+
+    h1{
+       font-size: $size-24; 
+    }
+}
+
+.app-wrapper {
+    @include flexbox(center, space-between, column);
+    padding: 10px;
+    // gap: 8px;
+}
+
+h2 {
+    margin: 0;
+    font-size: $size-20;
+}
+
+.form-container {
+    @include flexbox(center, space-between, column);
+    width: 100%;
+    min-height: 270px;
+    gap: 8px;
+    margin: 8px 0 8px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 290px;
+}
+
+
+.input-group {
+    @include flexbox(center, space-between, row);
+}
+
+.button-container {
+    @include flexbox(center, space-between, row);
+}
+
+textarea {
+    width: 179px;
+}

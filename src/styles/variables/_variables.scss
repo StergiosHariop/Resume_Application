@@ -2,6 +2,7 @@
 $Light-Grayish-Blue: #0e374e;
 
 // Font Sizes
+$size-7: 7px;
 $size-10: 10px;
 $size-13: 13px;
 $size-16: 16px;
@@ -11,3 +12,12 @@ $size-24: 24px;
 // Font Weights
 $weight-500: 500;
 $weight-700: 700;
+
+//Break-points
+$breakpoints: (
+    "xs": 0,
+    "sm": 320px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1440px
+)
