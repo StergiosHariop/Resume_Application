@@ -4,8 +4,6 @@ export default function Skills({ onSkillAdd, onSkillsClear }) {
   // const [skillList, setSkillList] = useState([]);
 	const [inputValue, setInputValue] = useState('');
 
-
-
 	const handleOnSubmit = (e) => {
 		e.preventDefault();
 		setInputValue('');
