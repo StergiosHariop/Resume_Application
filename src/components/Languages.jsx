@@ -12,6 +12,7 @@ function Languages({ onLanguageChange }) {
   const languageSelection = () => {
 
     const languageList = [
+    '--',
     'English',
     'Chinese',
     'Hindu',
@@ -27,20 +28,22 @@ function Languages({ onLanguageChange }) {
   ];
 
     return (
-        <select
-          id="lang"
-          name="languages"
-          onChange={(e) => onLanguageChange(e.target.value)}
+      <select
+        id="lang"
+        name="languages"
+        onChange={(e) => {
+          if (e.target.value === '--') return;
+          onLanguageChange(e.target.value)
+        }}
+        >
+        {languageList.map((lang, index) => (
+          <option
+            key={index}
           >
-          {languageList.map((lang, index) => (
-            <option
-              key={index}
-              value={lang}
-            >
-            {lang}
-            </option>
-          ))}
-        </select>
+          {lang}
+          </option>
+        ))}
+      </select>
     )
   };
 

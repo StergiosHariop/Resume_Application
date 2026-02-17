@@ -16,11 +16,22 @@ function App() {
   ];
 
   const [languageValue, setLanguageValue] = useState(['English', 'French']);
+  const [langFlag, setLangFlag] = useState(true);
 
-  const handleLanguagechange = (value) => {
-    let langArray = [];
-    langArray.push(value);
-    setLanguageValue(langArray);
+  const handleLanguagechange = (lang) => {
+
+    if (langFlag) {
+      setLangFlag(false);
+      setLanguageValue([lang]);
+    }
+
+    if (!langFlag) {
+      setLanguageValue((prev) => {
+        if (prev.includes(lang)) {
+          return prev;
+        }
+        return  [...prev, lang]});
+    }
   }
 
   const information = [
