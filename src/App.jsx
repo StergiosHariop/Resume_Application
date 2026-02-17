@@ -15,30 +15,32 @@ function App() {
     'Languages'
   ];
 
-  const [languageValue, setLanguageValue] = useState(['English', 'French']);
+  const [languageValues, setLanguageValues] = useState(['English', 'French']);
   const [langFlag, setLangFlag] = useState(true);
   const [index, setIndex] = useState(0);
-  const [label, setLable] = useState(0);
 
+
+  // Handle Language Changes from user
   const handleLanguagechange = (lang) => {
-
     if (langFlag) {
       setLangFlag(false);
-      setLanguageValue([lang]);
+      setLanguageValues([lang]);
     };
 
-    setLanguageValue((prev) => {
+    setLanguageValues((prev) => {
       if (prev.includes(lang)) {
         return prev;
       };
       return  [...prev, lang]});
   }
 
+  // Clears Existing Language List
   const handleClearExisting = () => {
-    setLanguageValue([]);
+    setLanguageValues([]);
   };
 
-  const information = [
+  // Components Array
+  const components = [
     <Personal />,
     <Experience />,
     <Education />,
@@ -48,16 +50,12 @@ function App() {
      />
   ];
 
-  const page = information[index];
-
   const nextPage = () => {
-    setIndex((index) => (index + 1) % information.length);
-    setLable(index + 1);
+    setIndex((index) => (index + 1) % components.length);
   };
 
-    const backPage = () => {
-    setIndex((index) => (index - 1 + information.length) % information.length);
-        setLable(index - 1);
+  const backPage = () => {
+    setIndex((index) => (index - 1 + components.length) % components.length);
   };
 
   return (
@@ -66,9 +64,9 @@ function App() {
         <h1>Resume Builder</h1>
       </div>
       <div className='app-wrapper'>
-      <h2>{labels[label]}</h2>
+      <h2>{labels[index]}</h2>
         <div className='form-container'>
-          {page}
+          {components[index]}
           <div className='button-container'>
             {index > 0 && (<button 
               onClick={backPage}
@@ -79,7 +77,7 @@ function App() {
           </div>
         </div>
         <Resume 
-          language={languageValue}
+          language={languageValues}
         />
       </div>
     </div>

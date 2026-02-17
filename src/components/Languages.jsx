@@ -4,29 +4,30 @@ function Languages({ onLanguageChange, onClearExisting }) {
   const [displayAddButton, setDisplayAddButton] = useState(true);
   const [displayLangSelection, setDisplayLangSelection] = useState(false);
 
+  // Function that controls button displays
   const addLanguage = () => {
     setDisplayAddButton(false);
     setDisplayLangSelection(true);
 
   };
 
+  // Language Selection Functionality
   const languageSelection = () => {
-
     const languageList = [
-    '--',
-    'English',
-    'Chinese',
-    'Hindu',
-    'Spanish',
-    'Greek',
-    'French',
-    'German',
-    'Russian',
-    'Korean',
-    'Portuguese',
-    'Italian',
-    'Japanese'
-  ];
+      '--',
+      'English',
+      'Chinese',
+      'Hindu',
+      'Spanish',
+      'Greek',
+      'French',
+      'German',
+      'Russian',
+      'Korean',
+      'Portuguese',
+      'Italian',
+      'Japanese'
+    ];
 
     return (
       <select
