@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-function Languages({ onLanguageChange }) {
+function Languages({ onLanguageChange, onClearExisting }) {
   const [displayAddButton, setDisplayAddButton] = useState(true);
   const [displayLangSelection, setDisplayLangSelection] = useState(false);
 
   const addLanguage = () => {
     setDisplayAddButton(false);
     setDisplayLangSelection(true);
+
   };
 
   const languageSelection = () => {
@@ -34,6 +35,8 @@ function Languages({ onLanguageChange }) {
         onChange={(e) => {
           if (e.target.value === '--') return;
           onLanguageChange(e.target.value)
+          setDisplayAddButton(true);
+          setDisplayLangSelection(false);
         }}
         >
         {languageList.map((lang, index) => (
@@ -54,6 +57,9 @@ function Languages({ onLanguageChange }) {
       {displayAddButton && (<button 
         onClick={addLanguage}
       >Add Language</button>)}
+      <button
+      onClick={onClearExisting}
+      >Clear Existing</button>
     </div>
       {displayLangSelection && languageSelection()}
     </>

@@ -57,3 +57,8 @@ form {
 textarea {
     width: 179px;
 }
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}

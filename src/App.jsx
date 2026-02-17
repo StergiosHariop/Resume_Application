@@ -17,22 +17,26 @@ function App() {
 
   const [languageValue, setLanguageValue] = useState(['English', 'French']);
   const [langFlag, setLangFlag] = useState(true);
+  const [index, setIndex] = useState(0);
+  const [label, setLable] = useState(0);
 
   const handleLanguagechange = (lang) => {
 
     if (langFlag) {
       setLangFlag(false);
       setLanguageValue([lang]);
-    }
+    };
 
-    if (!langFlag) {
-      setLanguageValue((prev) => {
-        if (prev.includes(lang)) {
-          return prev;
-        }
-        return  [...prev, lang]});
-    }
+    setLanguageValue((prev) => {
+      if (prev.includes(lang)) {
+        return prev;
+      };
+      return  [...prev, lang]});
   }
+
+  const handleClearExisting = () => {
+    setLanguageValue([]);
+  };
 
   const information = [
     <Personal />,
@@ -40,11 +44,9 @@ function App() {
     <Education />,
     <Languages
       onLanguageChange={handleLanguagechange}
+      onClearExisting={handleClearExisting}
      />
   ];
-
-  const [index, setIndex] = useState(0);
-  const [label, setLable] = useState(0);
 
   const page = information[index];
 
