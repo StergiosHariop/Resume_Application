@@ -1,31 +1,47 @@
 import React, { useState } from 'react'
 
-export default function Skills({ onSkillAdd, onSkillsClear }) {
+export default function Skills({ onSkillAdd, onSkillsAndToolsClear, onToolAdd}) {
   // const [skillList, setSkillList] = useState([]);
-	const [inputValue, setInputValue] = useState('');
+	const [inputSkill, setInputSkill] = useState('');
+  const [inputTool, setInputTool] = useState('');
 
-	const handleOnSubmit = (e) => {
+	const handleOnSubmitSkill = (e) => {
 		e.preventDefault();
-		setInputValue('');
-		onSkillAdd?.(inputValue);
+		setInputSkill('');
+		onSkillAdd?.(inputSkill);
 	}
+
+  const handleOnSubmitTool = (e) => {
+    e.preventDefault();
+		setInputTool('');
+		onToolAdd?.(inputTool);
+  }
 
   return (
     <div>
-			<form 
-				onSubmit={handleOnSubmit}
-				>
-				<input
-					type='text' 
-					value={inputValue}
-					placeholder='Ex: JavaScript..'
-					onChange={(e) => setInputValue(e.target.value)}
-				></input>
-			</form>
+      <form 
+        onSubmit={handleOnSubmitSkill}>
+        <input
+          type='text' 
+          value={inputSkill}
+          placeholder='Ex: JavaScript..'
+          onChange={(e) => setInputSkill(e.target.value)}>
+        </input>
+      </form>
       <p>Press -Enter- to add your skill</p>
-			<button
-				onClick={onSkillsClear}
-			>Clear Existing</button>
+      <form 
+        onSubmit={handleOnSubmitTool}>
+        <input
+          type='text' 
+          value={inputTool}
+          placeholder='Ex: VSCode..'
+          onChange={(e) => setInputTool(e.target.value)}>
+        </input>
+      </form>
+      <p>Press -Enter- to add your tool</p>
+      <button
+        onClick={onSkillsAndToolsClear}
+      >Clear Existing</button>
     </div>
   )
 }

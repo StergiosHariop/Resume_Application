@@ -1,27 +1,13 @@
 import '../styles/ResumeSkills.scss';
 
-export default function ResumeSkills({ skills }) {
+export default function ResumeSkills({ skills, tools}) {
 
-  //testing array
-  // const skillsMock = [
-  //   'JavaScript',
-  //   'HTML',
-  //   'CSS',
-  //   'React.js',
-  //   'Angular',
-  //   'Vite',
-  //   'SQL',
-  //   '.NET',
-  //   'Sass',
-  //   'Tailwind CSS'
-  // ];
-
-  const tools = [
-    'VSCode',
-    'Figma',
-    'Jira',
-    'Adobe Suite'
-  ]
+  // const tools = [
+  //   'VSCode',
+  //   'Figma',
+  //   'Jira',
+  //   'Adobe Suite'
+  // ]
 
 
   return (
@@ -36,7 +22,8 @@ export default function ResumeSkills({ skills }) {
       <div className=''>
         <p className='tools'>
           <b>Tools: </b> 
-          {tools.map((skill) => skill + ', ')}
+          {/* {tools.map((skill) => skill + ', ')} */}
+          {tools.map((tool) => tool + ', ')}
         </p>
       </div>
     </div>

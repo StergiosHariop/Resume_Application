@@ -8,7 +8,7 @@ import ResumeEducation from './ResumeEducation';
 import ResumeLanguages from './ResumeLanguages';
 import ResumeAdditional from './ResumeAdditional';
 
-export default function Resume({language, skills}) {
+export default function Resume({language, skills, tools}) {
   return (
     <div className='resume-container'>
       <ResumeHeader />
@@ -18,6 +18,7 @@ export default function Resume({language, skills}) {
           <hr />
           <ResumeSkills 
             skills = {skills}
+            tools={tools}
           />
         </div>
         <div className='section'>

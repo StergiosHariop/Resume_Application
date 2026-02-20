@@ -32,7 +32,13 @@ function App() {
     'Sass',
     'Tailwind CSS'
   ]);
-  // const [mockFlag, setMockFlag] = useState(false);
+
+  const [toolsList, setToolsList] = useState([
+    'VSCode',
+    'Figma',
+    'Jira',
+    'Adobe Suite'
+  ])
 
 
   // Handle Language Changes from user
@@ -57,18 +63,24 @@ function App() {
   // Handle Skill Addition
   const handleSkillAdd = (value) => {
     setSkillList((prev) => [...prev, value]);
-  }
+  };
 
-  const handleClearExistingSkills = () => {
+  const handleClearExistingSkillsAndTools = () => {
     setSkillList([]);
-  }
+    setToolsList([]);
+  };
+
+  const handleTooAdd = (value) => {
+    setToolsList((prev) => [...prev, value]);
+  };
 
   // Components Array
   const components = [
     <Personal />,
     <Skills 
       onSkillAdd={handleSkillAdd}
-      onSkillsClear={handleClearExistingSkills}
+      onToolAdd={handleTooAdd}
+      onSkillsAndToolsClear={handleClearExistingSkillsAndTools}
     />,
     <Experience />,
     <Education />,
@@ -107,6 +119,7 @@ function App() {
         <Resume 
           language={languageValues}
           skills={skillList}
+          tools={toolsList}
         />
       </div>
     </div>
