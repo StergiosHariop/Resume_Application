@@ -20,6 +20,8 @@ function App() {
   const [languageValues, setLanguageValues] = useState(['English', 'French']);
   const [langFlag, setLangFlag] = useState(true);
   const [index, setIndex] = useState(0);
+  const [hasUserAddedSkill, setHasUserAddedSkill] = useState(false);
+  const [hasUserAddedtool, setHasUserAddedToll] = useState(false);
   const [skillList, setSkillList] = useState([
     'JavaScript',
     'HTML',
@@ -32,14 +34,21 @@ function App() {
     'Sass',
     'Tailwind CSS'
   ]);
-
   const [toolsList, setToolsList] = useState([
     'VSCode',
     'Figma',
     'Jira',
     'Adobe Suite'
-  ])
-
+  ]);
+  const [education, setEducation] = useState({
+    name: 'Harvard',
+    location: 'Boston, MA, United States',
+    startDate: '02/05/2020',
+    endDate: '05/10/2025',
+    degree: "Bachelor's Degree",
+    major: "Computer Science",
+    gpa: '4.0'
+  });
 
   // Handle Language Changes from user
   const handleLanguagechange = (lang) => {
@@ -62,6 +71,10 @@ function App() {
 
   // Handle Skill Addition
   const handleSkillAdd = (value) => {
+    if (!hasUserAddedSkill) {
+      setSkillList([]);
+      setHasUserAddedSkill(true);
+    }
     setSkillList((prev) => [...prev, value]);
   };
 
@@ -70,8 +83,20 @@ function App() {
     setToolsList([]);
   };
 
-  const handleTooAdd = (value) => {
+  const handleToolAdd = (value) => {
+    if (!hasUserAddedtool) {
+      setToolsList([]);
+      setHasUserAddedToll(true);
+    }
     setToolsList((prev) => [...prev, value]);
+  };
+
+
+  const updateEducation = (field, newData) => {
+    setEducation((prev) => ({
+      ...prev,
+      [field]: newData
+    }));
   };
 
   // Components Array
@@ -79,11 +104,14 @@ function App() {
     <Personal />,
     <Skills 
       onSkillAdd={handleSkillAdd}
-      onToolAdd={handleTooAdd}
+      onToolAdd={handleToolAdd}
       onSkillsAndToolsClear={handleClearExistingSkillsAndTools}
     />,
     <Experience />,
-    <Education />,
+    <Education 
+      // education={education}
+      onSave={updateEducation}
+    />,
     <Languages
       onLanguageChange={handleLanguagechange}
       onClearExisting={handleClearExisting}
@@ -120,6 +148,7 @@ function App() {
           language={languageValues}
           skills={skillList}
           tools={toolsList}
+          education={education}
         />
       </div>
     </div>

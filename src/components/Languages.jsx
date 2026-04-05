@@ -26,7 +26,8 @@ function Languages({ onLanguageChange, onClearExisting }) {
       'Korean',
       'Portuguese',
       'Italian',
-      'Japanese'
+      'Japanese',
+      'Polish'
     ];
 
     return (
@@ -38,14 +39,9 @@ function Languages({ onLanguageChange, onClearExisting }) {
           onLanguageChange(e.target.value)
           setDisplayAddButton(true);
           setDisplayLangSelection(false);
-        }}
-        >
+        }}>
         {languageList.map((lang, index) => (
-          <option
-            key={index}
-          >
-          {lang}
-          </option>
+          <option key={index}>{lang}</option>
         ))}
       </select>
     )

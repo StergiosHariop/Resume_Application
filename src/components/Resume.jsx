@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/Resume.scss';
-import '../components/ResumeHeader'
+import '../components/ResumeHeader';
 import ResumeHeader from '../components/ResumeHeader';
 import ResumeExperience from './ResumeExperience';
 import ResumeSkills from './ResumeSkills';
@@ -8,7 +8,7 @@ import ResumeEducation from './ResumeEducation';
 import ResumeLanguages from './ResumeLanguages';
 import ResumeAdditional from './ResumeAdditional';
 
-export default function Resume({language, skills, tools}) {
+export default function Resume({language, skills, tools, education}) {
   return (
     <div className='resume-container'>
       <ResumeHeader />
@@ -34,7 +34,9 @@ export default function Resume({language, skills, tools}) {
         <div className='section'>
           <h2>Education</h2>
           <hr />
-          <ResumeEducation />
+          <ResumeEducation 
+          education = {education}
+          />
         </div>
         <div className='section'>
           <h2>Languages</h2>
@@ -46,4 +48,5 @@ export default function Resume({language, skills, tools}) {
       </div>
     </div>
   )
-}
+};
+
