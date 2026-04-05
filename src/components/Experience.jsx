@@ -7,6 +7,12 @@ function Experience() {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  }
+
   return (
     <>
       <form action="">
@@ -50,6 +56,8 @@ function Experience() {
           </label>
           <input
             type="checkbox"
+            checked={isChecked}
+            onChange={handleOnChange}
             id="company_present"
           />
         </div>
@@ -62,6 +70,7 @@ function Experience() {
             <DatePicker
               selected={endDate}
               onChange={(date) => setEndDate(date)}
+              disabled={isChecked}
               placeholderText="MM/DD/YYYY"
               />
           </div>
@@ -73,6 +82,7 @@ function Experience() {
           </label>
           <textarea id="job_description" placeholder='Describe your role and achievements...'></textarea>
         </div>
+        <button type='submit'>Save</button>
       </form>
     </>
   )

@@ -11,7 +11,7 @@ export default function ResumeHeader() {
           <p>New York,NY,10017</p>
           <p>+1 (217) 556 4367</p>
           <p>johndoe@test.com</p>
-          <p>linkedin.com/john_doe</p>
+          <p><a href={'linkedin.com/john_doe'} style={{textDecoration: 'none'}}>linkedin.com/john_doe</a></p>
         </div>
       </div>
     </>
