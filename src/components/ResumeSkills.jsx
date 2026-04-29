@@ -7,13 +7,13 @@ export default function ResumeSkills({ skills, tools}) {
       <div className=''>
         <p className='technical'>
           <b>Technical Skills: </b>
-          {skills.map((skill) => skill + ', ')}
+          {skills.map((skill) => skill ? skill + ', ' : null)}
         </p>
       </div>
       <div className=''>
         <p className='tools'>
           <b>Tools: </b>
-          {tools.map((tool) => tool + ', ')}
+          {tools.map((tool) => tool ? tool + ', ' : null)}
         </p>
       </div>
     </div>

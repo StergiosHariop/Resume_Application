@@ -50,6 +50,19 @@ function App() {
     gpa: '4.0'
   });
 
+  const [experience, setExperience] = useState({
+    companyName: 'Meta',
+    location: 'New York, NY, United States',
+    startDate: '02/05/2020',
+    endDate: '05/10/2025',
+    title: 'Software Engineer',
+    descriptionText: '',
+    description: [
+      'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.',
+      'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing.'
+    ]
+  });
+
   // Handle Language Changes from user
   const handleLanguagechange = (lang) => {
     if (langFlag) {
@@ -91,6 +104,12 @@ function App() {
     setToolsList((prev) => [...prev, value]);
   };
 
+  const updateExperience = (field, newData) => {
+    setExperience((prev) => ({
+      ...prev,
+      [field]: newData
+    }));
+  }
 
   const updateEducation = (field, newData) => {
     setEducation((prev) => ({
@@ -107,9 +126,10 @@ function App() {
       onToolAdd={handleToolAdd}
       onSkillsAndToolsClear={handleClearExistingSkillsAndTools}
     />,
-    <Experience />,
+    <Experience
+      onSave={updateExperience}
+    />,
     <Education 
-      // education={education}
       onSave={updateEducation}
     />,
     <Languages
@@ -149,6 +169,7 @@ function App() {
           skills={skillList}
           tools={toolsList}
           education={education}
+          experience={experience}
         />
       </div>
     </div>
